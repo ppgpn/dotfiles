@@ -1,7 +1,7 @@
 " ================ General Config ====================
 " "
 " "
-"set number                      "Line numbers are good
+set number                     "Line numbers are good
 set nocompatible		"Not compatible with vi
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -11,7 +11,9 @@ set wildmenu			"Better command-line completion
 set autoread                    "Reload files changed outside vim
 set hidden
 let mapleader = "\<Space>"
-set scrolloff=6 " Keep 6 lines below and above the cursor
+set scrolloff=6			"Keep 6 lines below and above the cursor
+set tabstop=4			"For tab
+set shiftwidth=4		"For indenting e.g. with =
 
 " ================ Auto Close Brackets ==============
 inoremap " ""<left>

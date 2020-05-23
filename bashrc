@@ -172,6 +172,10 @@ function mydf()         # Pretty-print of 'df' output.
     done
 }
 
+function scan_wifi() # scans for wifi networks
+{
+	nmcli d wifi
+}
 
 function my_ip() # Get IP adress on ethernet.
 {
