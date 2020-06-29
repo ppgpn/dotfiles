@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=2000
+HISTFILESIZE=3000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -91,7 +91,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
+alias mm='make -j $(nproc)'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -122,6 +122,8 @@ export CAFFE_DIR=/home/papag/adaption/
 #export PYTHONPATH=/home/papag/caffe/distribute/python:$PYTHONPATH
 #export LD_LIBRARY_PATH=/home/papag/caffe/build/lib:$LD_LIBRARY_PATH
 #export CAFFE_DIR=/home/papag/caffe/
+
+export STORAGE=/mnt/HDDext4/storage
 
 function extract()      # Handy Extract Program
 {
@@ -198,6 +200,12 @@ function info_host()   # Get current host related info.
     echo -e "\n${BRed}WiFi Local IP Address :$NC" ; my_ip wlp2s0 
     echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
     echo
+}
+
+function change_rate_to()
+{
+	echo "xrandr --output HDMI-1-1  --mode 1920x1080 --rate $1"
+	xrandr --output HDMI-1-1  --mode 1920x1080 --rate $1
 }
 
 function to_hex()
