@@ -15,6 +15,13 @@ set scrolloff=6			"Keep 6 lines below and above the cursor
 set tabstop=4			"For tab
 set shiftwidth=4		"For indenting e.g. with =
 
+" =============== Find previous cursor =============
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
+""if has("autocmd")
+""  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+""endif
+
 " =============== Move lines of code ===============
 nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
