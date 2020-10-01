@@ -181,7 +181,7 @@ function scan_wifi() # scans for wifi networks
 
 function my_ip() # Get IP adress on ethernet.
 {
-    MY_IP=$(/sbin/ifconfig $1 | awk '/inet/ { print $2 } ' |
+    MY_IP=$(/sbin/ip addr show $1 | awk '/inet/ { print $2 } ' |
       sed -e s/addr://)
     echo ${MY_IP:-"Not connected"}
 }
