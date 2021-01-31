@@ -14,6 +14,15 @@ let mapleader = "\<Space>"
 set scrolloff=6			"Keep 6 lines below and above the cursor
 set tabstop=4			"For tab
 set shiftwidth=4		"For indenting e.g. with =
+" =============== Language specific =============
+let g:scala_scaladoc_indent = 1
+
+" =============== Find previous cursor =============
+autocmd BufWinLeave *.* mkview!
+autocmd BufWinEnter *.* silent loadview
+""if has("autocmd")
+""  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+""endif
 
 " =============== Find previous cursor =============
 autocmd BufWinLeave *.* mkview!
@@ -129,7 +138,8 @@ let NERDTreeDirArrows = 1
 let NERDTreeQuitOnOpen = 1
 
 "Vim git nerdtree symbols"
-let g:NERDTreeIndicatorMapCustom = {
+"
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "*",
     \ "Untracked" : "-"
     \ }

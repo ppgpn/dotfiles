@@ -3,4 +3,4 @@ https://github.com/Xuyuanp/nerdtree-git-plugin.git
 https://github.com/tpope/vim-sensible.git
 https://github.com/bling/vim-airline
 https://github.com/vim-airline/vim-airline-themes
-
+https://github.com/derekwyatt/vim-scala
